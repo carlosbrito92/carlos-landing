@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true"/>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #FAFAF7; }
+    a { color: #0E5A4A; text-decoration: none; }
+    a:hover { color: #0E5A4A; text-decoration: underline; }
+    ::selection { background: #0E5A4A; color: #FAFAF7; }
+    [data-fade] { transition: opacity 0.7s ease, transform 0.7s ease; }
+  </style>
+</helmet>
+
+<div ref="{{ setRootRef }}" style="font-family: 'IBM Plex Sans', sans-serif; background: #FAFAF7; color: #1A1D21; min-height: 100vh;">
+
+  <!-- Header -->
+  <header data-screen-label="Header" style="position: sticky; top: 0; z-index: 10; background: rgba(250,250,247,0.92); backdrop-filter: blur(6px); border-bottom: 1px solid #E4E2DC;">
+    <div style="max-width: 840px; margin: 0 auto; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+      <a href="#top" style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.08em; color: #1A1D21; font-weight: 500;">CARLOS ALBERTO BRITO</a>
+      <nav style="display: flex; align-items: center; gap: 24px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;">
+        <a href="#work" style="color: #5C6670;">{{ t.navWork }}</a>
+        <a href="#projects" style="color: #5C6670;">{{ t.navProjects }}</a>
+        <a href="#experience" style="color: #5C6670;">{{ t.navExperience }}</a>
+        <a href="#contact" style="color: #5C6670;">{{ t.navContact }}</a>
+        <button onClick="{{ toggleLang }}" style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; background: none; border: 1px solid #1A1D21; color: #1A1D21; padding: 6px 12px; border-radius: 2px; cursor: pointer;">{{ t.toggleLabel }}</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="top" data-screen-label="Hero" style="max-width: 840px; margin: 0 auto; padding: 96px 24px 72px;">
+    <h1 style="font-family: 'IBM Plex Serif', serif; font-weight: 600; font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.08; margin: 0 0 12px; color: #1A1D21;">Carlos Alberto Brito</h1>
+    <p style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase; color: #0E5A4A; margin: 0 0 28px;">{{ t.role }}</p>
+    <p style="font-size: 1.15rem; line-height: 1.65; max-width: 620px; color: #1A1D21; margin: 0 0 28px;">{{ t.heroLine }}</p>
+    <p style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: 0.03em; color: #5C6670; margin: 0 0 32px;">{{ t.location }}</p>
+    <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+      <a href="#contact" style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; background: #1A1D21; color: #FAFAF7; padding: 12px 22px; border-radius: 2px;">{{ t.btnContact }}</a>
+      <a href="https://linkedin.com/in/carlos-albertobrito1992" style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; border: 1px solid #1A1D21; color: #1A1D21; padding: 12px 22px; border-radius: 2px;">{{ t.btnLinkedin }}</a>
+    </div>
+  </section>
+
+  <!-- Selected Work -->
+  <section id="work" data-screen-label="Selected Work" data-fade="true" style="max-width: 840px; margin: 0 auto; padding: 56px 24px; opacity: 0; transform: translateY(16px);">
+    <p style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #5C6670; margin: 0 0 8px;">{{ t.workLabel }}</p>
+    <h2 style="font-family: 'IBM Plex Serif', serif; font-weight: 600; font-size: 1.6rem; margin: 0 0 32px; color: #1A1D21;">{{ t.workTitle }}</h2>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+
+      <article style="border: 1px solid #E4E2DC; background: #ffffff; padding: 28px; display: flex; flex-direction: column; gap: 14px;">
+        <p style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: #0E5A4A; margin: 0; display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap;">
+          <span>{{ t.case1Tag }}</span><span style="color: #5C6670;">2025—</span>
+        </p>
+        <h3 style="font-family: 'IBM Plex Serif', serif; font-weight: 600; font-size: 1.25rem; margin: 0; color: #1A1D21;">{{ t.case1Title }}</h3>
+        <p style="font-size: 0.98rem; line-height: 1.65; color: #1A1D21; margin: 0;">{{ t.case1Body }}</p>
+      </article>
+
+      <article style="border: 1px solid #E4E2DC; background: #ffffff; padding: 28px; display: flex; flex-direction: column; gap: 14px;">
+        <p style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: #0E5A4A; margin: 0; display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap;">
+          <span>{{ t.case2Tag }}</span><span style="color: #5C6670;">2025–2026</span>
+        </p>
+        <h3 style="font-family: 'IBM Plex Serif', serif; font-weight: 600; font-size: 1.25rem; margin: 0; color: #1A1D21;">{{ t.case2Title }}</h3>
+        <p style="font-size: 0.98rem; line-height: 1.65; color: #1A1D21; margin: 0;">{{ t.case2Body }}</p>
+        <p style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.02em; color: #5C6670; margin-top: auto;">{{ t.case2Note }}</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- How I Work -->
+  <section data-screen-label="How I Work" data-fade="true" style="max-width: 840px; margin: 0 auto; padding: 56px 24px; opacity: 0; transform: translateY(16px);">
+    <p style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #5C6670; margin: 0 0 8px;">{{ t.howLabel }}</p>
+    <h2 style="font-family: 'IBM Plex Serif', serif; font-weight: 600; font-size: 1.6rem; margin: 0 0 12px; color: #1A1D21;">{{ t.howTitle }}</h2>
+    <p style="font-size: 1rem; line-height: 1.65; color: #1A1D21; margin: 0 0 32px; max-width: 620px;">{{ t.howSub }}</p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 28px;">
+      <div>
+        <p style="font-family: 'IBM Plex Mono', monospace; font-size: 1.6rem; font-weight: 500; color: #0E5A4A; margin: 0 0 8px;">{{ t.stat1Num }}</p>
+        <p style="font-size: 0.95rem; line-height: 1.6; color: #1A1D21; margin: 0;">{{ t.stat1Body }}</p>
+      </div>
+      <div>
+        <p style="font-family: 'IBM Plex Mono', monospace; font-size: 1.6rem; font-weight: 500; color: #0E5A4A; margin: 0 0 8px;">{{ t.stat2Num }}</p>
+        <p style="font-size: 0.95rem; line-height: 1.6; color: #1A1D21; margin: 0;">{{ t.stat2Body }}</p>
+      </div>
+      <div>
+        <p style="font-family: 'IBM Plex Mono', monospace; font-size: 1.6rem; font-weight: 500; color: #0E5A4A; margin: 0 0 8px;">{{ t.stat3Num }}</p>
+        <p style="font-size: 0.95rem; line-height: 1.6; color: #1A1D21; margin: 0;">{{ t.stat3Body }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Learning Projects -->
+  <section id="projects" data-screen-label="Learning Projects" data-fade="true" style="max-width: 840px; margin: 0 auto; padding: 56px 24px; opacity: 0; transform: translateY(16px);">
+    <p style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #5C6670; margin: 0 0 8px;">{{ t.projLabel }}</p>
+    <h2 style="font-family: 'IBM Plex Serif', serif; font-weight: 600; font-size: 1.6rem; margin: 0 0 12px; color: #1A1D21;">{{ t.projTitle }}</h2>
+    <p style="font-size: 1rem; line-height: 1.65; color: #1A1D21; margin: 0 0 28px; max-width: 620px;">{{ t.projSub }}</p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+      <div style="border: 1px solid #E4E2DC; padding: 20px;">
+        <p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #5C6670; margin: 0 0 10px;">{{ t.studyTag }}</p>
+        <h3 style="font-family: 'IBM Plex Serif', serif; font-weight: 600; font-size: 1.05rem; margin: 0 0 8px; color: #1A1D21;">Kino</h3>
+        <p style="font-size: 0.9rem; line-height: 1.55; color: #1A1D21; margin: 0;">{{ t.kinoBody }}</p>
+      </div>
+      <div style="border: 1px solid #E4E2DC; padding: 20px;">
+        <p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #5C6670; margin: 0 0 10px;">{{ t.studyTag }}</p>
+        <h3 style="font-family: 'IBM Plex Serif', serif; font-weight: 600; font-size: 1.05rem; margin: 0 0 8px; color: #1A1D21;">Fridge Kanban</h3>
+        <p style="font-size: 0.9rem; line-height: 1.55; color: #1A1D21; margin: 0;">{{ t.fridgeBody }}</p>
+      </div>
+      <div style="border: 1px solid #E4E2DC; padding: 20px;">
+        <p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #5C6670; margin: 0 0 10px;">{{ t.studyTag }}</p>
+        <h3 style="font-family: 'IBM Plex Serif', serif; font-weight: 600; font-size: 1.05rem; margin: 0 0 8px; color: #1A1D21;">CNPJ Intel</h3>
+        <p style="font-size: 0.9rem; line-height: 1.55; color: #1A1D21; margin: 0 0 10px;">{{ t.cnpjBody }}</p>
+        <a href="#" style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;">{{ t.cnpjLink }}</a>
+      </div>
+      <div style="border: 1px solid #E4E2DC; padding: 20px;">
+        <p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #5C6670; margin: 0 0 10px;">{{ t.studyTag }}</p>
+        <h3 style="font-family: 'IBM Plex Serif', serif; font-weight: 600; font-size: 1.05rem; margin: 0 0 8px; color: #1A1D21;">Household Finance</h3>
+        <p style="font-size: 0.9rem; line-height: 1.55; color: #1A1D21; margin: 0;">{{ t.financeBody }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" data-screen-label="Experience" data-fade="true" style="max-width: 840px; margin: 0 auto; padding: 56px 24px; opacity: 0; transform: translateY(16px);">
+    <p style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #5C6670; margin: 0 0 8px;">{{ t.expLabel }}</p>
+    <h2 style="font-family: 'IBM Plex Serif', serif; font-weight: 600; font-size: 1.6rem; margin: 0 0 32px; color: #1A1D21;">{{ t.expTitle }}</h2>
+
+    <div style="display: flex; flex-direction: column;">
+      <div style="display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 16px 0; border-top: 1px solid #E4E2DC;">
+        <div>
+          <p style="font-family: 'IBM Plex Serif', serif; font-weight: 600; font-size: 1.05rem; margin: 0 0 4px; color: #1A1D21;">Teem</p>
+          <p style="font-size: 0.92rem; color: #5C6670; margin: 0;">{{ t.teemRole }}</p>
+        </div>
+        <p style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #5C6670; margin: 0; white-space: nowrap;">Dec 2024 — Jun 2026</p>
+      </div>
+      <div style="display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 16px 0; border-top: 1px solid #E4E2DC;">
+        <div>
+          <p style="font-family: 'IBM Plex Serif', serif; font-weight: 600; font-size: 1.05rem; margin: 0 0 4px; color: #1A1D21;">American SaaS company</p>
+          <p style="font-size: 0.92rem; color: #5C6670; margin: 0;">{{ t.saasRole }}</p>
+        </div>
+        <p style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #5C6670; margin: 0; white-space: nowrap;">Jun 2025 — Jun 2026</p>
+      </div>
+      <div style="display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 16px 0; border-top: 1px solid #E4E2DC;">
+        <div>
+          <p style="font-family: 'IBM Plex Serif', serif; font-weight: 600; font-size: 1.05rem; margin: 0 0 4px; color: #1A1D21;">PJUS</p>
+          <p style="font-size: 0.92rem; color: #5C6670; margin: 0;">{{ t.pjusRole }}</p>
+        </div>
+        <p style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #5C6670; margin: 0; white-space: nowrap;">Dec 2024 — Jan 2025</p>
+      </div>
+      <div style="display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 16px 0; border-top: 1px solid #E4E2DC;">
+        <div>
+          <p style="font-family: 'IBM Plex Serif', serif; font-weight: 600; font-size: 1.05rem; margin: 0 0 4px; color: #1A1D21;">who.</p>
+          <p style="font-size: 0.92rem; color: #5C6670; margin: 0;">{{ t.whoRole }}</p>
+        </div>
+        <p style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #5C6670; margin: 0; white-space: nowrap;">May 2021 — Apr 2024</p>
+      </div>
+      <div style="display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 16px 0; border-top: 1px solid #E4E2DC; border-bottom: 1px solid #E4E2DC;">
+        <div>
+          <p style="font-family: 'IBM Plex Serif', serif; font-weight: 600; font-size: 1.05rem; margin: 0 0 4px; color: #1A1D21;">AeC</p>
+          <p style="font-size: 0.92rem; color: #5C6670; margin: 0;">{{ t.aecRole }}</p>
+        </div>
+        <p style="font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: #5C6670; margin: 0; white-space: nowrap;">Aug 2018 — Sep 2020</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" data-screen-label="Contact" data-fade="true" style="max-width: 840px; margin: 0 auto; padding: 56px 24px 96px; opacity: 0; transform: translateY(16px);">
+    <p style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #5C6670; margin: 0 0 8px;">{{ t.contactLabel }}</p>
+    <h2 style="font-family: 'IBM Plex Serif', serif; font-weight: 600; font-size: 1.6rem; margin: 0 0 16px; color: #1A1D21;">{{ t.contactTitle }}</h2>
+    <p style="font-size: 1.05rem; line-height: 1.65; color: #1A1D21; margin: 0 0 24px; max-width: 560px;">{{ t.contactBody }}</p>
+    <div style="display: flex; flex-direction: column; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 14px;">
+      <a href="mailto:carlosalberts18@gmail.com" style="color: #0E5A4A;">carlosalberts18@gmail.com</a>
+      <a href="https://linkedin.com/in/carlos-albertobrito1992" style="color: #0E5A4A;">linkedin.com/in/carlos-albertobrito1992</a>
+    </div>
+  </section>
+
+  <footer style="border-top: 1px solid #E4E2DC; padding: 24px; text-align: center;">
+    <p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.04em; color: #5C6670; margin: 0;">carlosbritodev.social.br</p>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { lang: 'en' };
+
+  translations = {
+    en: {
+      toggleLabel: 'PT-BR',
+      navWork: 'Work', navProjects: 'Projects', navExperience: 'Experience', navContact: 'Contact',
+      role: 'Fraud Prevention & Compliance Professional',
+      heroLine: 'Automated tools generate volume. I deliver precision — and when the process breaks, I build the tool that fixes it.',
+      location: 'Belo Horizonte, Brazil · Working remotely with US companies since 2024 · PT/EN',
+      btnContact: 'Contact', btnLinkedin: 'LinkedIn',
+      workLabel: 'Selected Work', workTitle: 'Real work, real stakes',
+      case1Tag: 'CASE 01 · IN PRODUCTION · ACTIVE CLIENT', case1Title: 'PT Periodização',
+      case1Body: 'A training periodization platform built for a working personal trainer — in production with real students today. Student authentication via professional-registry identifiers, multi-tenant architecture, and a workflow designed around how a trainer actually plans. React + Firebase, deployed on Vercel.',
+      case2Tag: 'CASE 02 · INTERNAL TOOL · DEPLOYED', case2Title: 'Internal OSINT Investigation Tool',
+      case2Body: 'While working in compliance investigation for an American SaaS company, I hit an operational restriction that turned dossier assembly into a manual bottleneck — with measurable impact on production volume. Instead of opening a ticket, I built the tool: an internal application that automated dossier structuring, with fallback logic and parsers built specifically for Brazilian public registries. Next.js + Supabase + LLM-assisted extraction.',
+      case2Note: 'Proprietary — no public link. Happy to walk through the architecture in an interview.',
+      howLabel: 'How I Work', howTitle: 'The same pattern, three different companies',
+      howSub: 'Find the bottleneck, fix it without being asked, measure the result.',
+      stat1Num: '+15% efficiency', stat1Body: 'At a fraud prevention firm, redesigned documental analysis workflows and trained the team on them.',
+      stat2Num: '−30% cycle time', stat2Body: 'At Teem, proposed and implemented enrichment flow improvements while manually verifying 4,300+ healthcare contacts with a near-zero error rate.',
+      stat3Num: '1 internal tool', stat3Body: 'At an American SaaS company, replaced a manual dossier process with an application I designed and built — no ticket, no waiting for approval.',
+      projLabel: 'Learning Projects', projTitle: 'Built to learn',
+      projSub: 'Personal projects built to learn — architecture, product decisions, and full-stack execution. Not client work, and labeled accordingly.',
+      studyTag: 'STUDY',
+      kinoBody: 'Film diary & social tracking app. Fastify + PostgreSQL + React Native (Expo), pnpm monorepo.',
+      fridgeBody: 'Self-hosted family kanban running 24/7 on a kitchen tablet. PWA, voice input, Docker.',
+      cnpjBody: 'Multi-agent Python CLI for company intelligence reports (OSINT). 41 passing tests.',
+      cnpjLink: 'View on GitHub →',
+      financeBody: "Couples' finance dashboard with AI-assisted categorization. Firebase + Vercel.",
+      expLabel: 'Experience', expTitle: 'Timeline',
+      teemRole: 'Data Enrichment Specialist · Remote (US)',
+      saasRole: 'Data Analyst / Case Investigator · Remote (US)',
+      pjusRole: 'Fraud Prevention Assistant · Belo Horizonte',
+      whoRole: 'Quality Analyst Jr. II · Belo Horizonte',
+      aecRole: 'Document Analyst · Belo Horizonte',
+      contactLabel: 'Contact', contactTitle: 'Open to remote roles',
+      contactBody: 'Open to remote roles in compliance operations, trust & safety, and business operations.'
+    },
+    pt: {
+      toggleLabel: 'EN',
+      navWork: 'Projetos', navProjects: 'Estudos', navExperience: 'Experiência', navContact: 'Contato',
+      role: 'Profissional de Prevenção a Fraudes e Compliance',
+      heroLine: 'Ferramentas automatizadas geram volume. Eu entrego precisão — e quando o processo quebra, eu construo a ferramenta que o conserta.',
+      location: 'Belo Horizonte, Brasil · Trabalho remoto com empresas dos EUA desde 2024 · PT/EN',
+      btnContact: 'Contato', btnLinkedin: 'LinkedIn',
+      workLabel: 'Projetos Selecionados', workTitle: 'Trabalho real, riscos reais',
+      case1Tag: 'CASO 01 · EM PRODUÇÃO · CLIENTE ATIVO', case1Title: 'PT Periodização',
+      case1Body: 'Uma plataforma de periodização de treinos construída para um personal trainer em atuação — em produção com alunos reais hoje. Autenticação de alunos via identificadores de registro profissional, arquitetura multi-tenant e um fluxo desenhado a partir de como um treinador realmente planeja. React + Firebase, publicado na Vercel.',
+      case2Tag: 'CASO 02 · FERRAMENTA INTERNA · IMPLANTADA', case2Title: 'Ferramenta Interna de Investigação OSINT',
+      case2Body: 'Enquanto trabalhava em investigação de compliance para uma empresa de SaaS americana, esbarrei em uma restrição operacional que transformou a montagem de dossiês em um gargalo manual — com impacto mensurável no volume de produção. Em vez de abrir um chamado, construí a ferramenta: uma aplicação interna que automatizou a estruturação de dossiês, com lógica de fallback e parsers feitos especificamente para registros públicos brasileiros. Next.js + Supabase + extração assistida por LLM.',
+      case2Note: 'Proprietário — sem link público. Posso apresentar a arquitetura em uma entrevista.',
+      howLabel: 'Como Eu Trabalho', howTitle: 'O mesmo padrão, três empresas diferentes',
+      howSub: 'Encontrar o gargalo, resolver sem que peçam, medir o resultado.',
+      stat1Num: '+15% de eficiência', stat1Body: 'Em uma empresa de prevenção a fraudes, redesenhei fluxos de análise documental e treinei a equipe.',
+      stat2Num: '−30% no ciclo', stat2Body: 'Na Teem, propus e implementei melhorias no fluxo de enriquecimento enquanto verificava manualmente mais de 4.300 contatos da área de saúde com taxa de erro próxima de zero.',
+      stat3Num: '1 ferramenta interna', stat3Body: 'Em uma empresa de SaaS americana, substituí um processo manual de dossiês por uma aplicação que projetei e construí — sem chamado, sem esperar aprovação.',
+      projLabel: 'Projetos de Estudo', projTitle: 'Construídos para aprender',
+      projSub: 'Projetos pessoais construídos para aprender — arquitetura, decisões de produto e execução full-stack. Não são trabalhos para clientes, e estão identificados como tal.',
+      studyTag: 'ESTUDO',
+      kinoBody: 'App de diário de filmes e acompanhamento social. Fastify + PostgreSQL + React Native (Expo), monorepo pnpm.',
+      fridgeBody: 'Kanban familiar self-hosted rodando 24/7 em um tablet na cozinha. PWA, entrada por voz, Docker.',
+      cnpjBody: 'CLI Python multi-agente para relatórios de inteligência empresarial (OSINT). 41 testes passando.',
+      cnpjLink: 'Ver no GitHub →',
+      financeBody: 'Dashboard financeiro para casais com categorização assistida por IA. Firebase + Vercel.',
+      expLabel: 'Experiência', expTitle: 'Linha do tempo',
+      teemRole: 'Especialista em Enriquecimento de Dados · Remoto (EUA)',
+      saasRole: 'Analista de Dados / Investigador de Casos · Remoto (EUA)',
+      pjusRole: 'Assistente de Prevenção a Fraudes · Belo Horizonte',
+      whoRole: 'Analista de Qualidade Jr. II · Belo Horizonte',
+      aecRole: 'Analista de Documentos · Belo Horizonte',
+      contactLabel: 'Contato', contactTitle: 'Aberto a vagas remotas',
+      contactBody: 'Aberto a vagas remotas em operações de compliance, trust & safety e operações de negócio.'
+    }
+  };
+
+  toggleLang = () => {
+    this.setState((s) => ({ lang: s.lang === 'en' ? 'pt' : 'en' }));
+  };
+
+  componentDidMount() {
+    const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const root = this.rootEl;
+    if (!root) return;
+    const els = root.querySelectorAll('[data-fade]');
+    if (reduced) {
+      els.forEach((el) => { el.style.opacity = '1'; el.style.transform = 'none'; });
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'none';
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    els.forEach((el) => io.observe(el));
+  }
+
+  renderVals() {
+    return {
+      setRootRef: (el) => { this.rootEl = el; },
+      t: this.translations[this.state.lang],
+      toggleLang: this.toggleLang
+    };
+  }
+}
+</script>
+</body>
+</html>
