@@ -33,6 +33,7 @@
         <a href="#projects" style="color: #5C6670;">{{ t.navProjects }}</a>
         <a href="#experience" style="color: #5C6670;">{{ t.navExperience }}</a>
         <a href="#contact" style="color: #5C6670;">{{ t.navContact }}</a>
+        <a href="https://github.com/carlosbrito92" target="_blank" rel="noopener noreferrer" style="color: #5C6670;">GitHub</a>
         <button onClick="{{ toggleLang }}" style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; background: none; border: 1px solid #1A1D21; color: #1A1D21; padding: 6px 12px; border-radius: 2px; cursor: pointer;">{{ t.toggleLabel }}</button>
       </nav>
     </div>
@@ -120,12 +121,16 @@
         <p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #5C6670; margin: 0 0 10px;">{{ t.studyTag }}</p>
         <h3 style="font-family: 'IBM Plex Serif', serif; font-weight: 600; font-size: 1.05rem; margin: 0 0 8px; color: #1A1D21;">CNPJ Intel</h3>
         <p style="font-size: 0.9rem; line-height: 1.55; color: #1A1D21; margin: 0 0 10px;">{{ t.cnpjBody }}</p>
-        <a href="#" style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;">{{ t.cnpjLink }}</a>
+        <a href="https://github.com/carlosbrito92/cnpj-intel" target="_blank" rel="noopener noreferrer" style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;">{{ t.cnpjLink }}</a>
       </div>
       <div style="border: 1px solid #E4E2DC; padding: 20px;">
         <p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #5C6670; margin: 0 0 10px;">{{ t.studyTag }}</p>
         <h3 style="font-family: 'IBM Plex Serif', serif; font-weight: 600; font-size: 1.05rem; margin: 0 0 8px; color: #1A1D21;">Household Finance</h3>
-        <p style="font-size: 0.9rem; line-height: 1.55; color: #1A1D21; margin: 0;">{{ t.financeBody }}</p>
+        <p style="font-size: 0.9rem; line-height: 1.55; color: #1A1D21; margin: 0 0 10px;">{{ t.financeBody }}</p>
+        <div style="display: flex; gap: 16px;">
+          <a href="https://household-dashboard-eight.vercel.app" target="_blank" rel="noopener noreferrer" style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;">{{ t.financeLiveLink }}</a>
+          <a href="https://github.com/carlosbrito92/household-dashboard" target="_blank" rel="noopener noreferrer" style="font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;">{{ t.financeCodeLink }}</a>
+        </div>
       </div>
     </div>
   </section>
@@ -186,7 +191,8 @@
   </section>
 
   <footer style="border-top: 1px solid #E4E2DC; padding: 24px; text-align: center;">
-    <p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.04em; color: #5C6670; margin: 0;">carlosbritodev.social.br</p>
+    <p style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.04em; color: #5C6670; margin: 0 0 8px;">carlosbritodev.social.br</p>
+    <a href="https://github.com/carlosbrito92" target="_blank" rel="noopener noreferrer" style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.04em; color: #5C6670;">github.com/carlosbrito92</a>
   </footer>
 
 </div>
@@ -223,6 +229,8 @@ class Component extends DCLogic {
       cnpjBody: 'Multi-agent Python CLI for company intelligence reports (OSINT). 41 passing tests.',
       cnpjLink: 'View on GitHub →',
       financeBody: "Couples' finance dashboard with AI-assisted categorization. Firebase + Vercel.",
+      financeLiveLink: 'Live app →',
+      financeCodeLink: 'View on GitHub →',
       expLabel: 'Experience', expTitle: 'Timeline',
       teemRole: 'Data Enrichment Specialist · Remote (US)',
       saasRole: 'Data Analyst / Case Investigator · Remote (US)',
@@ -258,6 +266,8 @@ class Component extends DCLogic {
       cnpjBody: 'CLI Python multi-agente para relatórios de inteligência empresarial (OSINT). 41 testes passando.',
       cnpjLink: 'Ver no GitHub →',
       financeBody: 'Dashboard financeiro para casais com categorização assistida por IA. Firebase + Vercel.',
+      financeLiveLink: 'Acessar app →',
+      financeCodeLink: 'Ver no GitHub →',
       expLabel: 'Experiência', expTitle: 'Linha do tempo',
       teemRole: 'Especialista em Enriquecimento de Dados · Remoto (EUA)',
       saasRole: 'Analista de Dados / Investigador de Casos · Remoto (EUA)',
